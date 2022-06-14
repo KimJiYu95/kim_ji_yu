@@ -1,0 +1,48 @@
+function view(arg) {
+    $('.scroll_1, .scroll_2,.scroll_3,.scroll_4,.scroll_5,.scroll_6,.scroll_7,.scroll_8,.scroll_9,.scroll_10').css('display', 'none');
+    if (arg == '0') {
+        $('.scroll_2').css('display', 'block');
+        viewcount = 1;
+    } else if (arg == '1') {
+        $('.scroll_3').css('display', 'block');
+        viewcount = 2;
+    } else if (arg == '2') {
+        $('.scroll_4').css('display', 'block');
+        viewcount = 3;
+    } else if (arg == '3') {
+        $('.scroll_5').css('display', 'block');
+        viewcount = 4;
+    } else if (arg == '4') {
+        $('.scroll_6').css('display', 'block');
+        viewcount = 5;
+    } else if (arg == '5') {
+        $('.scroll_7').css('display', 'block');
+        viewcount = 6;
+    } else if (arg == '6') {
+        $('.scroll_8').css('display', 'block');
+        viewcount = 7;
+    } else if (arg == '7') {
+        $('.scroll_9').css('display', 'block');
+        viewcount = 8;
+    } else if (arg == '8') {
+        $('.scroll_10').css('display', 'block');
+        viewcount = 9;
+    } else if (arg == '10') {
+        $('.scroll_1').css('display', 'block');
+        viewcount = 0;
+    }
+}
+var viewcount = 0;
+var rtcarousel = setInterval(function () {
+    view(viewcount);
+}, 5000);
+
+$('.search_scroll').mouseenter(function () {
+    clearInterval(rtcarousel);
+});
+
+$('.search_scroll').mouseleave(function () {
+    rtcarousel = setInterval(function () {
+        view(viewcount);
+    }, 5000);
+});
